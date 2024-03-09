@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="file" id="files" multiple><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const files = document.getElementById("files");
+
+            const formdata = new FormData();
+
+            for (let x = 0; x < files.files.length; x++) {
+                formdata.append("files", files.files[0])
+            }
+            console.log(...formdata)
+            fetch('http://127.0.0.1:8080/uploads',{
+                method:'POST',
+                body:formdata
+            })
+            .then(res => res.json())
+            .then(data=>console.log(data))
+        })
+    </script>
+</body>
+
+</html>
