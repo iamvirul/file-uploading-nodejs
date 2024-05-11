@@ -1,4 +1,3 @@
-**README**
 
 **Node.js File Upload API**
 
