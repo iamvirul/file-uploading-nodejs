@@ -70,4 +70,3 @@ Virul Nirmala - https://virul.me
 **Acknowledgments:**
 
 - This application was developed to provide a simple and efficient solution for handling file uploads in Node.js applications.
-- Special thanks to the Node.js community for creating and maintaining the Express.js and Multer libraries, simplifying the development of web applications in Node.js.
